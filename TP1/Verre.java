@@ -17,7 +17,7 @@ public class Verre {
     //   quantiteVerse = this.getVolumeVide();
     // }
     if(q < 0){
-      throw IllegalArgumentException("q < 0");
+      throw new IllegalArgumentException("q < 0");
     }
     int quantiteVerse = Math.min(q, this.getVolumeVide());
     this.quantite += quantiteVerse;
@@ -26,7 +26,7 @@ public class Verre {
 
   public int boire(int q) {
     if(q < 0){
-      throw IllegalArgumentException("q < 0");
+      throw new IllegalArgumentException("q < 0");
     }
     int quantiteBue = Math.min(q, quantite);
     this.quantite -= quantiteBue;
@@ -36,4 +36,7 @@ public class Verre {
   public String toString() {
     return "Quantite : " + this.quantite + "/" + this.contenance;
   }
+
+  public int getContenance(){ return this.contenance;}
+  public int getQuantite(){ return this.quantite;}
 }

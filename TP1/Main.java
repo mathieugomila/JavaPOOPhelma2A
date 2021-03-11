@@ -10,7 +10,5 @@ public class Main{
       System.out.println(v1);
       v1.boire(20);
       System.out.println(v1);
-
-
     }
 }
