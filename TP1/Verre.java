@@ -2,10 +2,28 @@ public class Verre {
   private int contenance;
   private int quantite;
 
-  public Verre(int contenance){
+  public Verre(int contenance) {
+    if(contenance < 0) {
+      throw new IllegalArgumentException("aie");
+    }
     this.contenance = contenance;
     this.quantite = 0;
   }
+
+  public Verre(int contenance, int quantite){
+    if(contenance < 0) {
+      throw new IllegalArgumentException("aie");
+    }
+    if(quantite < 0) {
+      throw new IllegalArgumentException("aie2");
+    }
+    if(quantite > contenance) {
+      throw new IllegalArgumentException("aie3");
+    }
+    this.contenance = contenance;
+    this.quantite = quantite;
+  }
+
 
   public int getVolumeVide() {
     return this.contenance - this.quantite;
@@ -34,9 +52,13 @@ public class Verre {
   }
 
   public String toString() {
-    return "Quantite : " + this.quantite + "/" + this.contenance;
+    return new String("Quantite : " + this.quantite + "/" + this.contenance);
   }
 
-  public int getContenance(){ return this.contenance;}
-  public int getQuantite(){ return this.quantite;}
+  public int getContenance(){
+    return this.contenance;
+  }
+  public int getQuantite(){
+    return this.quantite;
+  }
 }
