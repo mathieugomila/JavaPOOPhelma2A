@@ -1,2 +1,6 @@
 # ignore compiled classes
 *.class
+*.js
+*.png
+*.css
+*.html
